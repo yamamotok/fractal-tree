@@ -1,33 +1,50 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
-  <link rel="stylesheet" href="css/style.css">
-  <meta name="description" content="">
+  <title>Fractal tree (canopy) drawing</title>
+  <link rel="stylesheet" href="./css/default.css">
+  <link rel="stylesheet" href="./css/custom.css">
 
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
-  <meta property="og:image:alt" content="">
+  <meta name="description" content="Fractal tree (canopy) drawing using JavaScript and HTML5 canvas. The branch angle, ratio, and trunk height can be customized.">
 
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" href="/icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="icon.png">
+  <meta property="og:title" content="Fractal tree (canopy) drawing">
+  <meta property="og:image" content="./img/demo-tree.png">
+  <meta property="og:image:alt" content="A fractal tree (canopy)">
 
-  <link rel="manifest" href="site.webmanifest">
-  <meta name="theme-color" content="#fafafa">
+  <link rel="icon" href="./favicon.ico" sizes="any">
+
+  <script src="./js/main.js"></script>
 </head>
 
 <body>
-
-  <!-- Add your site or application content here -->
-  <p>Hello world! This is HTML5 Boilerplate.</p>
-  <script src="js/app.js"></script>
-
+  <section id="main">
+    <div class="canvas-frame">
+      <canvas id="canvas" width="600" height="600"></canvas>
+    </div>
+    <div class="control-panel">
+      <div class="button-row">
+        <button onclick="stop();start()">Draw</button>
+        <button onclick="stop()">Clear</button>
+      </div>
+      <div class="input-row">
+        <div>
+          <label for="branch-angle">Branch angle (deg):</label>
+          <input id="branch-angle" value="45" />
+        </div>
+        <div>
+          <label for="branch-ratio">Branch length ratio:</label>
+          <input id="branch-ratio" value="0.87" />
+        </div>
+        <div>
+          <label for="trunk-height">First trunk height (px):</label>
+          <input id="trunk-height" value="75" />
+        </div>
+      </div>
+    </div>
+  </section>
 </body>
 
 </html>
