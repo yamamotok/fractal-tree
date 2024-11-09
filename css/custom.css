@@ -46,6 +46,6 @@ body {
   min-width: 170px;
 }
 
-.control-panel .input-row input {
+.control-panel .input-row input[type="number"], .control-panel .input-row input[type="text"] {
   width: 4rem;
 }
