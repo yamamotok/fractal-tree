@@ -138,18 +138,18 @@ class GardenDirector {
   planNextTrees(sourceTree) {
     const root = sourceTree.p1;
     const trunkHeight = sourceTree.trunkHeight * sourceTree.branchRatio;
-    const branchShrinkage = sourceTree.branchRatio;
-    const branchSpread = sourceTree.branchAngle;
-    const treeInclineLeft = sourceTree.treeIncline - branchSpread / 2;
-    const treeInclineRight = sourceTree.treeIncline + branchSpread / 2;
+    const branchRatio = sourceTree.branchRatio;
+    const branchAngle = sourceTree.branchAngle;
+    const treeInclineLeft = sourceTree.treeIncline - branchAngle / 2;
+    const treeInclineRight = sourceTree.treeIncline + branchAngle / 2;
     this.trees.push(
-      new Tree(root, trunkHeight, branchShrinkage, branchSpread, treeInclineLeft),
-      new Tree(root, trunkHeight, branchShrinkage, branchSpread, treeInclineRight)
+      new Tree(root, trunkHeight, branchRatio, branchAngle, treeInclineLeft),
+      new Tree(root, trunkHeight, branchRatio, branchAngle, treeInclineRight)
     );
   }
 
   /**
-   * Director starts his work.
+   * Director starts the work.
    */
   run() {
     this.timerId = window.setInterval(() => this.work(), 10);
